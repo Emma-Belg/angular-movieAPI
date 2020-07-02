@@ -1,0 +1,22 @@
+<p>homepage works!</p>
+<!--{{ getNowPlayingMovies() | async }}-->
+<table *ngIf="getMovies() | async as movies">
+<thead>
+<tr>
+  <th>Movie Title</th>
+  <th>Poster</th>
+  <th>Votes</th>
+  <th>Date</th>
+  <th>Overview</th>
+</tr>
+</thead>
+<tbody *ngFor="let movie of movies">
+<tr>
+  <td>{{ movie.poster_path }}</td>
+  <td>{{ movie.title }}</td>
+  <td>{{ movie.vote_average }}</td>
+  <td>{{ movie.release_date | date}}</td>
+  <td>{{ movie.overview }}</td>
+</tr>
+</tbody>
+</table>
