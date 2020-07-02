@@ -1,10 +1,10 @@
-<p>homepage works!</p>
+<h2>Now Playing Movies</h2>
 <!--{{ getNowPlayingMovies() | async }}-->
-<table *ngIf="getMovies() | async as movies">
+<table *ngIf="getMovies() as movies">
 <thead>
 <tr>
-  <th>Movie Title</th>
   <th>Poster</th>
+  <th>Movie Title</th>
   <th>Votes</th>
   <th>Date</th>
   <th>Overview</th>
