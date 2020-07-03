@@ -1,9 +1,20 @@
 <h2>Now Playing Movies</h2>
 <!--{{ getNowPlayingMovies() | async }}-->
+<section class="card-container" *ngIf="getMovies() as movies">
+  <article class="card" *ngFor="let movie of movies">
+    <article class="card-content">
+    <img src="https://image.tmdb.org/t/p/w300{{ movie.poster_path}}"> <br>
+      <h3>{{ movie.title }} </h3> <br/>
+    <p>{{ movie.vote_average }} /10</p>
+    {{ movie.release_date | date}}
+    <button>Movie Overview</button>
+    </article>
+  </article>
+</section>
 <table *ngIf="getMovies() as movies">
 <thead>
 <tr>
-  <th>Poster</th>
+  <th>ID for Poster</th>
   <th>Movie Title</th>
   <th>Votes</th>
   <th>Date</th>
@@ -12,7 +23,7 @@
 </thead>
 <tbody *ngFor="let movie of movies">
 <tr>
-  <td>{{ movie.poster_path }}</td>
+  <td><img src="https://image.tmdb.org/t/p/w400{{ movie.poster_path}}"> </td>
   <td>{{ movie.title }}</td>
   <td>{{ movie.vote_average }}</td>
   <td>{{ movie.release_date | date}}</td>

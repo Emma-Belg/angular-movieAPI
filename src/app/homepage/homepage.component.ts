@@ -9,6 +9,15 @@ import {MovieNowPlayingService} from '../movieNowPlaying.service';
 })
 export class HomepageComponent implements OnInit {
 
+
+  //TO DO
+  //Have cards that are flexible in their display and that have the image and then the title and the votes shows under the image and then when you click on it you get a description
+  // maybe put in an ability to sort the movies by name or votes?
+
+
+
+
+
   errorMessage: string;
   private moviesNowPlaying;
 
